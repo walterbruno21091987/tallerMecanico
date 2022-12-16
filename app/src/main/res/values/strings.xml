@@ -7,4 +7,6 @@
     <string name="agregar_repuesto">AGREGAR REPUESTO</string>
     <string name="imprimir_factura">IMPRIMIR FACTURA</string>
     <string name="agregar_reparacion">AGREGAR REPARACION</string>
+    <string name="ganancia_del_taller">GANANCIA DEL TALLER</string>
+    <string name="total_de_reparaciones_por_cliente">REPARACIONES POR CLIENTE</string>
 </resources>

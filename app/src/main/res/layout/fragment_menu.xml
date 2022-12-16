@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,7 +20,8 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/iconopersona"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_agregar_cliente"
@@ -52,7 +55,8 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/repuestos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_cliente" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_cliente"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_agregar_repuesto"
@@ -79,7 +83,8 @@
 
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/im_agregar_repuesto"
-        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_vehiculo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_vehiculo"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_agregar_reparacion"
@@ -106,7 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toEndOf="@+id/im_agregar_cliente"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/im_imprimir_factura"
@@ -119,7 +125,8 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/icono_ticket"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_repuesto" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_repuesto"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_imprimir_factura"
@@ -134,4 +141,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/im_imprimir_factura" />
 
+    <ImageView
+        android:id="@+id/im_ganancia_taller"
+        android:layout_width="133dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/iconoganancia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toEndOf="@+id/im_imprimir_factura"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agregar_reparacion"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_ganancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/ganancia_del_taller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_ganancia_taller" />
+
+    <ImageView
+        android:id="@+id/im_costo_por_cliente"
+        android:layout_width="130dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="156dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/iconoreparacionesporcliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ganancia"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/reparaciones_totales_por_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/total_de_reparaciones_por_cliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_costo_por_cliente" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
