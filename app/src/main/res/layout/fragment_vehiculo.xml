@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VehiculoFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_patente"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
+        app:boxBackgroundColor="#AEB0F3E4"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintHorizontal_bias="0.491"
+
+       >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_patente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PATENTE" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_cod_cliente_dueño"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
+        app:boxBackgroundColor="#AEB0F3E4"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintHorizontal_bias="0.491"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_cod_cliente_dueño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CODIGO DE CLIENTE DEL DUEÑO DEL VEHICULO" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_tope_cobertura"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
+        app:boxBackgroundColor="#AEB0F3E4"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintHorizontal_bias="0.491"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_tope_cobertura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tope_de_cobertura_del_seguro" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_monto_minimo_seguro"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
+        app:boxBackgroundColor="#AEB0F3E4"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintHorizontal_bias="0.491"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_monto_minimo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/monto_a_partir_del_cual_cubre_seguro" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_agregar_vehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop="88dp"
+        />
+
+</LinearLayout>
+</layout>

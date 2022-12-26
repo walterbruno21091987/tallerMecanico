@@ -9,4 +9,7 @@
     <string name="agregar_reparacion">AGREGAR REPARACION</string>
     <string name="ganancia_del_taller">GANANCIA DEL TALLER</string>
     <string name="total_de_reparaciones_por_cliente">REPARACIONES POR CLIENTE</string>
+    <string name="apellido">APELLIDO</string>
+    <string name="tope_de_cobertura_del_seguro">TOPE DE COBERTURA DEL SEGURO</string>
+    <string name="monto_a_partir_del_cual_cubre_seguro">MONTO A PARTIR DEL CUAL CUBRE SEGURO</string>
 </resources>
