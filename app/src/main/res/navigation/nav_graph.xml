@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_menuFragment_to_vehiculoFragment"
             app:destination="@id/vehiculoFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_sparePartFragment"
+            app:destination="@id/sparePartFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_reparacionFragment"
+            app:destination="@id/reparacionFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
@@ -32,6 +38,22 @@
         android:label="VehiculoFragment" >
         <action
             android:id="@+id/action_vehiculoFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sparePartFragment"
+        android:name="com.example.tallermecanico.UI.SparePartFragment"
+        android:label="SparePartFragment" >
+        <action
+            android:id="@+id/action_sparePartFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reparacionFragment"
+        android:name="com.example.tallermecanico.UI.ReparacionFragment"
+        android:label="ReparacionFragment" >
+        <action
+            android:id="@+id/action_reparacionFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>

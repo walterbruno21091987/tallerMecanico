@@ -6,32 +6,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VehiculoFragment">
-
+    tools:context=".SparePartFragment">
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_patente"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="44dp"
-        app:boxBackgroundColor="#AEB0F3E4"
-        app:counterEnabled="true"
-        app:counterMaxLength="16"
-        app:layout_constraintHorizontal_bias="0.491"
-
-       >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_patente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="PATENTE" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_cod_cliente_dueño"
+        android:id="@+id/til_cod_repuesto"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginEnd="10dp"
@@ -45,15 +22,16 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_cod_cliente_dueño"
+            android:id="@+id/et_cod_repuesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CODIGO DE CLIENTE DEL DUEÑO DEL VEHICULO"
+            android:hint="CODIGO DE REPUESTO"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_tope_cobertura"
+        android:id="@+id/til_nombre_repuesto"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginEnd="10dp"
@@ -67,14 +45,35 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_tope_cobertura"
+            android:id="@+id/et_nombre_repuesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/tope_de_cobertura_del_seguro"
-            android:inputType="number|numberDecimal" />
+            android:hint="NOMBRE DEL REPUESTO" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_precio"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
+        app:boxBackgroundColor="#AEB0F3E4"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:layout_constraintHorizontal_bias="0.491"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PRECIO"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_monto_minimo_seguro"
+        android:id="@+id/til_stock"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginEnd="10dp"
@@ -88,22 +87,22 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_monto_minimo"
+            android:id="@+id/et_stock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/monto_a_partir_del_cual_cubre_seguro"
-            android:inputType="number|numberDecimal" />
+            android:hint="UNIDADES EN STOCK"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb_agregar_vehiculo"
+        android:id="@+id/fb_agregar_repuesto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
         android:layout_gravity="bottom|center"
         android:layout_marginTop="88dp"
-        />
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </LinearLayout>
-</layout>
+    </layout>

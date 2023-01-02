@@ -36,7 +36,8 @@
             android:id="@+id/et_cod_cliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CODIGO CLIENTE" />
+            android:hint="CODIGO CLIENTE"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

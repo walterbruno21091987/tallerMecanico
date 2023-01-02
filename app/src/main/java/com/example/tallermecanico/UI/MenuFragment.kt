@@ -42,8 +42,14 @@ class MenuFragment : Fragment() {
 
         findNavController().navigate(R.id.action_menuFragment_to_clientFragment)
     }
+        binding.imAgregarRepuesto.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_sparePartFragment)
+        }
         binding.imAgregarVehiculo.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_vehiculoFragment)
+        }
+        binding.imAgregarReparacion.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_reparacionFragment)
         }
     }
 
