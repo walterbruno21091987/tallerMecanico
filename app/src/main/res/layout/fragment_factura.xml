@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentFactura"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/bt_buscar_cod_rep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar por codigo de reparacion"
+        android:layout_marginTop="30dp"/>
+<EditText
+    android:id="@+id/et_codigo_reparacion_a_buscar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="ingrese el codigo de reparacion"
+    android:inputType="number"
+    android:visibility="gone"/>
+    <Button
+        android:id="@+id/bt_buscar_por_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="buscar por cliente" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

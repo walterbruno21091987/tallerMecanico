@@ -32,6 +32,7 @@ class Vehicle(val numberPlate:String, val clientCode:Int, val insuranceCap: Doub
         else request="no"
         return request
     }
+
 }
 
 

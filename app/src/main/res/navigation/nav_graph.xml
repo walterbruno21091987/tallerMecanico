@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_menuFragment_to_reparacionFragment"
             app:destination="@id/reparacionFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_fragmentFactura"
+            app:destination="@id/fragmentFactura" />
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
@@ -54,6 +57,14 @@
         android:label="ReparacionFragment" >
         <action
             android:id="@+id/action_reparacionFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFactura"
+        android:name="com.example.tallermecanico.FragmentFactura"
+        android:label="FragmentFactura" >
+        <action
+            android:id="@+id/action_fragmentFactura_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>
