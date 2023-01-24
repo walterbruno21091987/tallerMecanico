@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.example.tallermecanico.databinding.FragmentFacturaBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,6 +43,26 @@ class FragmentFactura : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var codCliente="0"
+        var bundle= bundleOf("COD_CLIENT" to codCliente )
+        binding.btBuscarCodRep.setOnClickListener {
+
+            findNavController().navigate(R.id.action_fragmentFactura_to_listadoReparaciones,bundle)
+        }
+        binding.btBuscarPorCliente.setOnClickListener {
+            binding.etCodigoClientABuscar.visibility=View.VISIBLE
+            binding.btBuscar.visibility=View.VISIBLE
+            binding.btBuscar.setOnClickListener {
+                codCliente = binding.etCodigoClientABuscar.text.toString()
+                bundle = bundleOf("COD_CLIENT" to codCliente)
+                findNavController().navigate(
+                    R.id.action_fragmentFactura_to_listadoReparaciones,
+                    bundle
+                )
+            }     }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

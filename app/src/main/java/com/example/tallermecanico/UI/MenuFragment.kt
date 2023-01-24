@@ -1,5 +1,6 @@
 package com.example.tallermecanico.UI
 
+import ClientRepository
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.tallermecanico.R
 import com.example.tallermecanico.databinding.FragmentMenuBinding
+import com.example.tallermecanico.otros.entidades.Repair
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -54,6 +56,24 @@ class MenuFragment : Fragment() {
         binding.imImprimirFactura.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_fragmentFactura)
         }
+        binding.imGananciaTaller.setOnClickListener{
+            binding.lyGananciaTotal.visibility=View.VISIBLE
+            binding.gananciaTotal.text= "$ ${Repair.total_profit_workShop()}"
+         binding.btOk.setOnClickListener {
+             binding.lyGananciaTotal.visibility=View.GONE
+         }
+        }
+        binding.imCostoPorCliente.setOnClickListener {
+            binding.lyIngreseCliente.visibility=View.VISIBLE
+            binding.btOkIngreseCliente.setOnClickListener {
+             binding.lyIngreseCliente.visibility=View.GONE
+            binding.lyReparacionPorCliente.visibility=View.VISIBLE
+                if(binding.ingreseCliente!=null){
+            binding.costoPorCliente.text= ClientRepository.get(binding.ingreseCliente.text.toString().toInt())!!.reparacionTotal()}
+            binding.btOkReparacionCliente.setOnClickListener {
+                binding.lyReparacionPorCliente.visibility=View.GONE
+            }
+        }}
     }
 
     companion object {

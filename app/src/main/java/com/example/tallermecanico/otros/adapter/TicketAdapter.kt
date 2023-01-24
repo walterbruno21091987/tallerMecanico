@@ -19,9 +19,9 @@ class TicketAdapter(val ticketList:List<Repair>): RecyclerView.Adapter<TicketVie
     lateinit var binding: ItemFacturaBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
 
-        val layoutInflater = LayoutInflater.from(parent.context)
-        binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_factura, parent, false)
-        return TicketViewHolder(layoutInflater.inflate(R.layout.item_factura, parent, false))
+
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_factura, parent, false)
+        return TicketViewHolder(binding.root)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -48,7 +48,7 @@ class TicketAdapter(val ticketList:List<Repair>): RecyclerView.Adapter<TicketVie
 
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return ticketList.size
     }
 
 

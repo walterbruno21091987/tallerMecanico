@@ -10,6 +10,20 @@ open class Client(val code:Int,  val name:String,  val surname:String){
     override fun toString(): String {
         return "Client(code=$code, name='$name', surname='$surname')"
     }
+    fun reparacionTotal():String{
+        var totalCostRepair=0.0
+        for(repair in RepairRepository.get()){
+            if(code.equals(repair.code)){
+                var totalCost=repair.laborCost().plus(repair.totalSparePartsCost())
+                var customerDiscount = customerDiscount(totalCost)
+                var insuranceDiscounnt = VehicleRepository.get(code)?.insuranceDiscounnt(totalCost)
+                totalCostRepair=totalCost.minus(customerDiscount).minus(customerDiscount)
+            }
+        }
+        return  """El cliente $name $surname tiene costo total de reparaciones de 
+            |                 $ ${totalCostRepair}""".trimMargin()
+
+    }
     companion object {
         fun totalCostOfrepairsPerCustomer() {
             for (client in ClientRepository.get()) {

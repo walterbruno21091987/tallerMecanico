@@ -66,5 +66,16 @@
         <action
             android:id="@+id/action_fragmentFactura_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_fragmentFactura_to_listadoReparaciones"
+            app:destination="@id/listadoReparaciones" />
+    </fragment>
+    <fragment
+        android:id="@+id/listadoReparaciones"
+        android:name="com.example.tallermecanico.UI.ListadoReparaciones"
+        android:label="ListadoReparaciones" >
+        <action
+            android:id="@+id/action_listadoReparaciones_to_fragmentFactura"
+            app:destination="@id/fragmentFactura" />
     </fragment>
 </navigation>

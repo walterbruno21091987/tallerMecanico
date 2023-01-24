@@ -12,19 +12,29 @@
         android:id="@+id/bt_buscar_cod_rep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar por codigo de reparacion"
+        android:text="Buscar por reparacion"
         android:layout_marginTop="30dp"/>
-<EditText
-    android:id="@+id/et_codigo_reparacion_a_buscar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="ingrese el codigo de reparacion"
-    android:inputType="number"
-    android:visibility="gone"/>
+
     <Button
         android:id="@+id/bt_buscar_por_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="buscar por cliente" />
+    <EditText
+        android:id="@+id/et_codigo_client_a_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ingrese el codigo de cliente"
+        android:inputType="number"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/bt_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:visibility="gone"
+        android:text="buscar" />
 </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
