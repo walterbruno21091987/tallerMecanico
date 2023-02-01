@@ -1,6 +1,7 @@
 package com.example.tallermecanico.UI
 
 import Vehicle
+import VehicleRepository
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.tallermecanico.R
 import com.example.tallermecanico.databinding.FragmentMenuBinding
 import com.example.tallermecanico.databinding.FragmentVehiculoBinding
+import com.example.tallermecanico.otros.exception.ExistingNumberPlateExcepcion
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,20 +54,25 @@ class VehiculoFragment : Fragment() {
   }
     }
     private fun addVehicle() {
-        try{val vehicleAdd: Boolean
+       try{ try{val vehicleAdd: Boolean
         val numberPlate =binding.etPatente.text.toString()
         val idClient = binding.etCodClienteDueO.text.toString().toInt()
         val insuranceCap = binding.etTopeCobertura.text.toString().toDouble()
         val insuranceCoverageFrom =binding.etMontoMinimo.text.toString().toDouble()
         val newVehicle = Vehicle(numberPlate, idClient, insuranceCap, insuranceCoverageFrom)
-        vehicleAdd = VehicleRepository.add(newVehicle)
+
+       if(VehicleRepository.get(numberPlate)==null){
+           vehicleAdd = VehicleRepository.add(newVehicle)
         if (vehicleAdd == true) {
           Toast.makeText(context,"VEHICULO AGREGADO CORRECTAMENTE",Toast.LENGTH_LONG).show()
            findNavController().navigate(R.id.action_vehiculoFragment_to_menuFragment)
-        }
+        }}
         else {
-            Toast.makeText(context,"NO SE PUDO AGREGAR EL VEHICULO",Toast.LENGTH_LONG).show()
-        }}catch (ex:java.lang.NumberFormatException){
+            throw ExistingNumberPlateExcepcion("PATENTE EXISTENTE")
+
+        }}catch (e:ExistingNumberPlateExcepcion){
+           Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
+       }}catch (ex:java.lang.NumberFormatException){
             Toast.makeText(context,"DEBE INGRESAR LOS DATOS REQUERIDOS CORRECTAMENTE",Toast.LENGTH_LONG).show()
         }
     }

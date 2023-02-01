@@ -1,5 +1,6 @@
 package com.example.tallermecanico.UI
 
+import ClientRepository
 import NewClient
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.tallermecanico.R
 import com.example.tallermecanico.databinding.FragmentClientBinding
+import existingCodeExcepcion
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,14 +59,20 @@ class ClientFragment : Fragment() {
     }
     private fun addClient(): Boolean {
         var agregado=false
-        try{
+       try{ try{
         val codClient= binding.etCodCliente.text.toString().toInt()
         val nameClient=binding.etNombre.text.toString()
         val surnameClient=binding.etApellido.text.toString()
+            if(ClientRepository.get(codClient)==null){
         val newClient = NewClient(codClient, nameClient, surnameClient)
-        agregado = ClientRepository.add(newClient)}catch (ex:java.lang.NumberFormatException){
+        agregado = ClientRepository.add(newClient)}
+            else throw existingCodeExcepcion("codigo de cliente existente")
+        }catch (ex:java.lang.NumberFormatException){
             Toast.makeText(context,"DEBE INGRESAR TODOS LOS VALORES",Toast.LENGTH_LONG).show()
+       }}catch (e:existingCodeExcepcion){
+           Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
        }
+
         return agregado
     }
 

@@ -72,11 +72,13 @@ class ReparacionFragment : Fragment() {
     }catch (e:NoStockExcepcion){
     Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
     }
-        }
+            binding.etCodigoRepuesto.text=null
+            binding.etCantidad.text=null }
    binding.btAgregarReparacion.setOnClickListener {
       if (addRepair(totalListSparePart)){
           Toast.makeText(context,"reparacion agregada correctamente",Toast.LENGTH_LONG).show()
       }
+
    }
 
     }

@@ -1,16 +1,19 @@
 package com.example.tallermecanico.UI
 
 import ClientRepository
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.tallermecanico.R
 import com.example.tallermecanico.databinding.FragmentMenuBinding
 import com.example.tallermecanico.otros.entidades.Repair
+import com.example.tallermecanico.otros.exception.NonExistenCodeException
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -38,6 +41,7 @@ class MenuFragment : Fragment() {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     binding.imAgregarCliente.setOnClickListener {
@@ -68,12 +72,18 @@ class MenuFragment : Fragment() {
             binding.btOkIngreseCliente.setOnClickListener {
              binding.lyIngreseCliente.visibility=View.GONE
             binding.lyReparacionPorCliente.visibility=View.VISIBLE
-                if(binding.ingreseCliente!=null){
-            binding.costoPorCliente.text= ClientRepository.get(binding.ingreseCliente.text.toString().toInt())!!.reparacionTotal()}
+                try{if(binding.ingreseCliente!=null){
+               if(ClientRepository.get(binding.ingreseCliente.text.toString().toInt())!=null){
+
+            binding.costoPorCliente.text= ClientRepository.get(binding.ingreseCliente.text.toString().toInt())!!.reparacionTotal()
             binding.btOkReparacionCliente.setOnClickListener {
                 binding.lyReparacionPorCliente.visibility=View.GONE
+            }}else {  throw NonExistenCodeException("CODIGO  DE CLIENTE INEXISTENTE")
+            }}}catch(e:NonExistenCodeException){
+                Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
+                    binding.lyIngreseCliente.visibility=View.VISIBLE
             }
-        }}
+           binding.ingreseCliente.text=null}}
     }
 
     companion object {
